@@ -1,6 +1,8 @@
 
+
 .BigLogo {
   display: inline-block; /* Контейнер будет подстраиваться под размер содержимого */
+  height: 1000px; /* Фиксированная высота родительского контейнера */
   position: relative; /* Для позиционирования дочерних элементов */
 }
 
@@ -44,4 +46,46 @@
   font-size: 4rem; /* Размер текста (можно настроить) */
   text-align: left; /* Выравнивание текста по центру */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень для текста */
+}
+.lider {
+  position: absolute;
+  text-align: center;
+  margin-top: 300px;
+  color: black;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: Dela Gothic One;
+  font-weight: 800;
+  font-size: 3em;
+}
+.RV{
+  position: absolute;
+  text-align: center;
+  
+  margin-top: 410px;
+  color: black;
+  left: 50%;
+ 
+  transform: translateX(-50%) scaleX(1.2);
+
+  width: 100%; /* Растягиваем по ширине */
+  height: 200px;
+  font-size: 2em;
+  font-family: Dela Gothic One;
+  font-weight: 800;
+}
+
+.buttons button {
+  padding: 10px 20px; /* Внутренние отступы */
+  font-size: 2rem; /* Размер шрифта */
+  color: white; /* Цвет текста */
+  background-color: #363a3d; /* Цвет фона */
+  border: none; /* Убираем границу */
+  border-radius: 15px; /* Закругляем углы */
+  cursor: pointer; /* Курсор в виде указателя */
+  transition: background-color 0.3s ease; /* Плавное изменение цвета */
+  margin-top: 550px;
+  margin-left: 100px;
+  width: 400px;
+  transform: translateX(50%); /* Центрируем по горизонтали */
 }
