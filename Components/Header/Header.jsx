@@ -9,6 +9,13 @@ import './Header.css';
 export default function Header() {
   return (
     <div>
+      <div>
+        <h1 className='proverka'>ПРОВЕРКА ШРИФТА</h1>
+      </div>
+      <div>
+        <h1 className='proverka2'>ПРОВЕРКА ШРИФТА 2</h1>
+      </div>
+      
         <div className='BigLogo'>
           <img src={factory} alt="Factory" className='FactoryLogo' />
           <img src={sliderLogo} alt="Sliderbef" className='SliderLogo' />

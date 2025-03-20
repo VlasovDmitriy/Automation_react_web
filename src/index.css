@@ -13,6 +13,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -66,4 +67,11 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+@font-face {
+  font-family: 'GothaProBla'; /* Название шрифта, которое вы будете использовать */
+  src: url('./fonts/GothaProBla.woff') format('woff'); /* Путь к файлу шрифта */
+  font-weight: normal; /* Настройте вес шрифта, если нужно */
+  font-style: normal; /* Настройте стиль шрифта, если нужно */
 }
