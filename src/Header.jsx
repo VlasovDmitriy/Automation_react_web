@@ -17,6 +17,7 @@ export default function Header() {
             <Phone color="red" size={24} /> { icons }
             Позвонить
           </button> */}
+          <h1></h1>
           <div className='texts'>
           <h1 className='lider'>ЛИДЕР В ИТ И АВТОМАТИЗАЦИИ</h1>
           <h2 className='RV'>РАЗРАБОТКА, ВНЕДРЕНИЕ, АНАЛИЗ, ТЕСТИРОВАНИЕ </h2>
