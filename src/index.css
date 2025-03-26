@@ -75,3 +75,17 @@ button:focus-visible {
   font-weight: normal; /* Настройте вес шрифта, если нужно */
   font-style: normal; /* Настройте стиль шрифта, если нужно */
 }
+
+@font-face {
+  font-family: 'GothaProLig'; /* Название шрифта, которое вы будете использовать */
+  src: url('./fonts/GothaProLig.woff') format('woff'); /* Путь к файлу шрифта */
+  font-weight: normal; /* Настройте вес шрифта, если нужно */
+  font-style: normal; /* Настройте стиль шрифта, если нужно */
+}
+
+@font-face {
+  font-family: 'GothaProReg'; /* Название шрифта, которое вы будете использовать */
+  src: url('./fonts/GothaProReg.woff') format('woff'); /* Путь к файлу шрифта */
+  font-weight: normal; /* Настройте вес шрифта, если нужно */
+  font-style: normal; /* Настройте стиль шрифта, если нужно */
+}
