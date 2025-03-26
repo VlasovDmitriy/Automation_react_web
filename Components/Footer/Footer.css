@@ -1,13 +1,51 @@
-.UridAddress{
+.container {
+    display: grid;
+    grid-template-columns: auto 1fr; /* 1-я колонка - для адреса, 2-я - для контактов */
+    gap: 10px;
+  }
+  
+  .UridAddress {
     color: black;
     font-family: 'GothaProBla', sans-serif;
     font-size: 18px;
     margin-left: 50px;
-}
-
-.address{
+    grid-column: 1;
+  }
+  
+  .address-wrapper {
+    display: flex;          /* Делаем flex-контейнер */
+    align-items: center;    /* Выравниваем по вертикали */
+    gap: 16px;             /* Отступ между иконкой и текстом */
+    margin-left: 10px;     /* Отступ слева как в вашем коде */
+    text-align: right; 
+  }
+  
+  .address {
     color: black;
     font-family: 'GothaProBla', sans-serif;
     font-size: 14px;
-    margin-left: 10px;
-}
+    margin: 0;      
+    line-height: 0.6; /* Уменьшенный интервал */       
+  }
+  
+  .logdown {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+  
+  /* Если логотип слишком большой */
+  .Logo30years {
+    max-width: 200px; /* Ограничение ширины */
+    height: auto; /* Сохраняет пропорции */
+  }
+
+  .Contacts {
+    grid-column: 2;
+    text-align: right; /* Выравниваем контакты по правому краю */
+    font-family: 'GothaProBla', sans-serif;
+    font-size: 18px;
+    color: black;
+  }
