@@ -69,17 +69,9 @@ button:focus-visible {
   }
 }
 
-@font-face {
 
-  font-family: 'GothaProBla'; /* Название шрифта, которое вы будете использовать */
-  src: url('./fonts/GothaProBla.woff') format('woff'); /* Путь к файлу шрифта */
-  font-weight: normal; /* Настройте вес шрифта, если нужно */
-  font-style: normal; /* Настройте стиль шрифта, если нужно */
-}
 
 @font-face {
-  
-
   font-family: 'GothaProBla'; 
   src: url('./Fonts/GothaProBla.woff') format('woff');
   font-weight: normal;
