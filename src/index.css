@@ -67,3 +67,24 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+@font-face {
+  font-family: 'GothaProBla'; 
+  src: url('./fonts/GothaProBla.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GothaProLig'; 
+  src: url('./fonts/GothaProLig.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'GothaProReg'; 
+  src: url('./fonts/GothaProReg.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
