@@ -70,7 +70,7 @@ button:focus-visible {
 }
 
 @font-face {
-<<<<<<< HEAD
+
   font-family: 'GothaProBla'; /* Название шрифта, которое вы будете использовать */
   src: url('./fonts/GothaProBla.woff') format('woff'); /* Путь к файлу шрифта */
   font-weight: normal; /* Настройте вес шрифта, если нужно */
@@ -78,35 +78,25 @@ button:focus-visible {
 }
 
 @font-face {
-  font-family: 'GothaProLig'; /* Название шрифта, которое вы будете использовать */
-  src: url('./fonts/GothaProLig.woff') format('woff'); /* Путь к файлу шрифта */
-  font-weight: normal; /* Настройте вес шрифта, если нужно */
-  font-style: normal; /* Настройте стиль шрифта, если нужно */
-}
+  
 
-@font-face {
-  font-family: 'GothaProReg'; /* Название шрифта, которое вы будете использовать */
-  src: url('./fonts/GothaProReg.woff') format('woff'); /* Путь к файлу шрифта */
-  font-weight: normal; /* Настройте вес шрифта, если нужно */
-  font-style: normal; /* Настройте стиль шрифта, если нужно */
-=======
   font-family: 'GothaProBla'; 
-  src: url('./fonts/GothaProBla.woff') format('woff');
+  src: url('./Fonts/GothaProBla.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'GothaProLig'; 
-  src: url('./fonts/GothaProLig.woff') format('woff');
+  src: url('./Fonts/GothaProLig.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'GothaProReg'; 
-  src: url('./fonts/GothaProReg.woff') format('woff');
+  src: url('./Fonts/GothaProReg.woff') format('woff');
   font-weight: normal;
   font-style: normal;
->>>>>>> e5061ce81ed763bfc4c8ed75c6cb490be0885417
+
 }
