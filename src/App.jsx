@@ -1,15 +1,18 @@
 import { useState } from 'react'
 import './App.css'
+import './index.css';
 import Header from '../Components/Header/Header.jsx'
-import Footer from '../Components/Footer/Footer.jsx'
+
+import Main from '../Components/Main/Main.jsx'
 
 export default function App() {
   return (
-   <div>
-    {/* <Header />  */}
-    <Footer />
-  </div>
-  )
+    <>
+      <Header />
+      <Main />
+    </>
+  );
+
 }
 
 
