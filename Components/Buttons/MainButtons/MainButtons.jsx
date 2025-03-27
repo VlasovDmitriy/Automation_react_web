@@ -1,5 +1,5 @@
 import './MainButtons.css'
 
-export default function MainButton({text}){
-    <button className='button'>{text}</button>
+export default function MainButton({children}){
+    return <button className="button">{children}</button>
 }

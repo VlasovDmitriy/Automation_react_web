@@ -1,14 +1,24 @@
 .button {
-    padding: 10px 20px;
-    font-size: 2rem;
-    color: white;
-    background-color: #363a3d;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 550px;
-    margin-left: 100px;
-    width: 400px;
-    transform: none;
-  }
+  padding: 10px 20px;
+  color: white;
+  background-color: #000000;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  height: 60px;
+  width: 330px;
+  font-family: 'GothaProReg', sans-serif;
+  font-size: 1.5rem; /* Оставил один font-size */
+  letter-spacing: 1px;
+
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.2);
+  
+  /* Transition должен быть здесь, а не в hover */
+  transition: all 0.5s ease-in-out; /* Исправлено время на 0.3s (300ms) */
+}
+
+.button:hover {
+  background-color: white;
+  color: #000000;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
