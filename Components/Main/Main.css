@@ -1,38 +1,47 @@
+/* Добавляем стиль для основного контейнера */
+.main-container {
+  position: relative;
+  width: 100%;
+  min-height: 60vh; /* Минимальная высота на весь экран */
+  overflow: hidden; /* Обрезаем все, что выходит за границы */
+}
+
+.Backfactory {
+  position: absolute; /* Меняем fixed на absolute */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.5;
+}
+
+.texts {
+  text-align: center;
+  margin-top: 10rem;
+  margin-bottom: 7rem;
+  letter-spacing: 10px;
+}
+
 .lider {
-    position: absolute;
-    text-align: center;
-    margin-top: 10rem;
-    color: black;
-    left: 50%;
-    transform: translateX(-50%);
-    font-family: 'GothaProBla', sans-serif;
-    font-size: 3em;
-  }
-  
-  .RV {
-    position: absolute;
-    text-align: center;
-    margin-top: 15rem;
-    color: black;
-    left: 50%;
-    transform: translateX(-50%) scaleX(1.2);
-    width: 100%;
-    height: 200px;
-    font-size: 2em;
-    font-family: 'GothaProReg', sans-serif;
-  }
-  
-  .buttons button {
-    padding: 10px 20px;
-    font-size: 2rem;
-    color: white;
-    background-color: #363a3d;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: 550px;
-    margin-left: 100px;
-    width: 400px;
-    transform: none;
-  }
+  color: black;
+  font-family: 'GothaProBla', sans-serif;
+  font-size: 3em;
+  margin-bottom: 1rem;
+}
+
+.RV {
+  color: black;
+  font-size: 2em;
+  font-family: 'GothaProBla', sans-serif;
+  margin-bottom: 3rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  flex-wrap: wrap;
+  margin-bottom: 5rem;
+}
