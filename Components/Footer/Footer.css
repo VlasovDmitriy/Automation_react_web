@@ -1,7 +1,13 @@
-.footer-container {
+/* Общий контейнер */
+.footer-wrapper {
+    width: 100%;
+}
+
+/* Стили для первого контейнера (баннер) */
+.footer-banner-container {
     position: relative;
     width: 100%;
-    height: 400px; /* Фиксированная высота или по необходимости */
+    height: 400px; /* Можно регулировать */
 }
 
 .footer-bg {
@@ -20,15 +26,72 @@
     transform: translate(-50%, -50%);
     z-index: 2;
     text-align: center;
-    color: white; /* Цвет текста по вашему выбору */
-    width: 80%; /* Ширина текстового блока */
-    max-width: 100%; /* Максимальная ширина */
+    color: white;
+    width: 80%;
 }
 
 .footer-content h2 {
     font-family: 'GothaProBla', sans-serif;
     font-size: 3em;
-    letter-spacing: 15px;
-    margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Тень для лучшей читаемости */
+    letter-spacing: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Стили для второго контейнера (информация) */
+.footer-info-container {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Остальные стили остаются без изменений */
+.UridAddress {
+    color: black;
+    font-family: 'GothaProBla', sans-serif;
+    font-size: 18px;
+    margin-left: 50px;
+    grid-column: 1;
+}
+
+.address-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: 10px;
+}
+
+.address {
+    color: black;
+    font-family: 'GothaProBla', sans-serif;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.logdown {
+    text-align: center;
+    grid-column: 1 / -1;
+    margin-top: 20px;
+}
+
+.Logo30years {
+    max-width: 200px;
+    height: auto;
+}
+
+.Contacts {
+    grid-column: 2;
+    text-align: right;
+    font-family: 'GothaProBla', sans-serif;
+    font-size: 18px;
+    color: black;
 }
