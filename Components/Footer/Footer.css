@@ -13,10 +13,10 @@
   }
   
   .address-wrapper {
-    display: flex;          /* Делаем flex-контейнер */
-    align-items: center;    /* Выравниваем по вертикали */
-    gap: 16px;             /* Отступ между иконкой и текстом */
-    margin-left: 10px;     /* Отступ слева как в вашем коде */
+    display: flex;          
+    align-items: center;    
+    gap: 16px;             
+    margin-left: 10px;     
     text-align: right; 
   }
   
@@ -25,7 +25,7 @@
     font-family: 'GothaProBla', sans-serif;
     font-size: 14px;
     margin: 0;      
-    line-height: 0.6; /* Уменьшенный интервал */       
+    line-height: 0.6;       
   }
   
   .logdown {
@@ -49,3 +49,24 @@
     font-size: 18px;
     color: black;
   }
+
+
+  .containerForDiag {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    
+  }
+  .containerForDiag canvas {
+    transform: scale(1.1); /* Увеличивает всю диаграмму */
+    transition: transform 0.3s;
+  }
+  
+  .containerForDiag:hover canvas {
+    transform: scale(1.15); /* Эффект при наведении */
+  }
+ 
+ 
+  
+
+  

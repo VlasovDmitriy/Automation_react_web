@@ -2,7 +2,20 @@ import React from 'react';
 import './Footer.css';
 import { House } from 'lucide-react';
 import Logo30years from "../../templates/logo_30.png";
+import {
+  Chart as ChartJS,
+  RadialLinearScale,
+  ArcElement,
+  Tooltip,
+  Legend,
+} from 'chart.js';
+import { PolarArea } from 'react-chartjs-2';
 
+
+
+
+
+  
 
 export default function Footer() {
 
@@ -30,7 +43,9 @@ export default function Footer() {
             <div className='logdown'>
                 <img src={Logo30years} alt="Logo30years" className='Logo30years' />
             </div>
-        </div>
+            
+            
 
+        </div>
     );
 }
