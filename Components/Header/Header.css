@@ -49,7 +49,7 @@
     font-family: 'GothaProBla', sans-serif;
   }
   
-.Phone{
+  .Phone {
     color: white;
     position: absolute;
     top: 4rem;
@@ -57,9 +57,14 @@
     z-index: 3;
     cursor: pointer;
     object-fit: cover;
+    transition: transform 0.3s ease; /* Плавное увеличение */
 }
 
-.Mail{
+.Phone:hover {
+    transform: scale(1.2); /* Увеличение на 20% */
+}
+
+.Mail {
     color: white;
     position: absolute;
     top: 10rem;
@@ -67,5 +72,10 @@
     z-index: 3;
     cursor: pointer;
     object-fit: cover;
+    transition: transform 0.3s ease; /* Плавное увеличение */
+}
+
+.Mail:hover {
+    transform: scale(1.2); /* Увеличение на 20% */
 }
 

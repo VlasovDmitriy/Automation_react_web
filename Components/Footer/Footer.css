@@ -1,27 +1,23 @@
-/* Общий контейнер */
+/* Footer.css */
 .footer-wrapper {
     width: 100%;
+    position: relative;
+    min-height: 100vh;
 }
 
-/* Стили для первого контейнера (баннер) */
+/* Баннер */
 .footer-banner-container {
     position: relative;
     width: 100%;
-    height: 400px; /* Можно регулировать */
-}
-
-.footer-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    object-fit: cover;
-    z-index: 1;
+    height: 200px;
+    margin-bottom: 3rem;
+    overflow: hidden;
+    background: #000000;
 }
 
 .footer-content {
     position: absolute;
-    top: 27%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
@@ -32,66 +28,209 @@
 
 .footer-content h2 {
     font-family: 'GothaProBla', sans-serif;
-    font-size: 3em;
+    font-size: 2.5em;
     letter-spacing: 20px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-/* Стили для второго контейнера (информация) */
+/* Основной контент */
 .footer-info-container {
     width: 100%;
-    background: rgba(255, 255, 255, 0.8);
-    padding: 20px 0;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px 0;
+    position: relative;
+    z-index: 3;
 }
 
 .container {
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Остальные стили остаются без изменений */
+/* Юридический адрес */
+.address-block {
+    grid-column: 1;
+}
+
 .UridAddress {
-    color: black;
+    color: #000;
     font-family: 'GothaProBla', sans-serif;
     font-size: 18px;
-    margin-left: 50px;
-    grid-column: 1;
+    margin-bottom: 25px; /* Синхронизирован с контактами */
+    padding-left: 0; /* Убран левый отступ */
 }
 
 .address-wrapper {
     display: flex;
-    align-items: center;
     gap: 16px;
-    margin-left: 10px;
+    align-items: center; /* Иконка по центру */
 }
 
-.address {
-    color: black;
+.address-text {
     font-family: 'GothaProBla', sans-serif;
     font-size: 14px;
-    margin: 0;
-    line-height: 1.4;
+    line-height: 1.6;
+    color: #333;
 }
 
-.logdown {
-    text-align: center;
-    grid-column: 1 / -1;
-    margin-top: 20px;
+.address-text p {
+    margin: 5px 0;
 }
 
-.Logo30years {
-    max-width: 200px;
-    height: auto;
-}
-
-.Contacts {
+/* Контакты */
+.contacts-container {
     grid-column: 2;
-    text-align: right;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.ourcontacts {
+    color: #000;
     font-family: 'GothaProBla', sans-serif;
     font-size: 18px;
-    color: black;
+    
+    text-align: left; /* Выравнивание как у адреса */
+    padding-left: 0; /* Убран левый отступ */
+}
+
+.contacts-top-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.phone-section,
+.requisites-group {
+    display: flex;
+    gap: 15px;
+}
+
+.phone-section {
+    align-items: center;
+}
+
+.requisites-group {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ogrn,
+.inn {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    font-family: 'GothaProBla', sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+.mail-section {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    width: 100%;
+    margin-top: 25px;
+}
+
+.contact-info {
+    font-family: 'GothaProBla', sans-serif;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+
+.Logo30 {
+    position: absolute;
+    bottom: 3rem;
+    left: 3rem;
+    z-index: 3;
+  }
+
+
+/* Фоновая картинка */
+.footer-bg-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%; 
+    height: auto;
+    z-index: 3;
+}
+
+.arrow{
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    bottom: 3rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.arrow:hover {
+    transform: scale(1.2); /* Увеличение на 20% */
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .contacts-container {
+        grid-column: 1;
+    }
+
+    .contacts-top-row {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .UridAddress,
+    .ourcontacts {
+        padding-left: 0;
+        text-align: left;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-content h2 {
+        font-size: 1.5em;
+        letter-spacing: 5px;
+    }
+
+    .phone-section,
+    .ogrn,
+    .inn,
+    .mail-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logdown {
+        position: static;
+        margin: 30px auto 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .address-wrapper {
+        flex-direction: column;
+        align-items: flex-start; /* Для мобилок */
+    }
+
+    .Logo30years {
+        width: 150px;
+    }
 }
