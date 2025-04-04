@@ -79,3 +79,11 @@
     transform: scale(1.2); /* Увеличение на 20% */
 }
 
+.proverka{
+  color: black;
+  font-family: 'GothaProBla', sans-serif;
+}
+.proverka2{
+  color:  black;
+}
+

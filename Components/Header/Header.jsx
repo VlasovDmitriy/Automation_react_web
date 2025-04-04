@@ -8,7 +8,8 @@ import './Header.css';
 
 export default function Header() {
   return (
-    <>
+
+
         <div className='BigLogo'>
           <img src={factory} alt="Factory" className='FactoryLogo' />
           <img src={sliderLogo} alt="Sliderbef" className='SliderLogo' />
@@ -17,6 +18,7 @@ export default function Header() {
           <Phone className='Phone' size={34} strokeWidth={2}/>
           <Mail className='Mail' size={34} strokeWidth={2}/>
         </div>
-    </>
+
+
   );
 }

@@ -1,0 +1,87 @@
+.professional {
+    display: flex;
+    justify-content: center; /* Центрирование по горизонтали */
+    padding: 20px 0;
+    
+}
+
+.aboutUs {
+    width: 100%;
+    max-width: 1200px; /* Ограничение максимальной ширины */
+    padding: 0 20px;
+}
+.titleWrapper {
+    display: inline-block; /* Чтобы подчеркивание было только по ширине содержимого */
+    margin-bottom: 30px;
+}
+
+.titleOfBlock {
+    position: relative;
+    padding-bottom: 1px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    font-family: 'GothaProBla', sans-serif;
+    font-size: 35px;
+    color: #333;
+    transition: all 0.3s ease; /* Плавные переходы */
+}
+
+/* Эффектное подчеркивание с градиентом */
+.titleOfBlock::after {
+    content: '';
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #ff0000, #4525ff, #ff0000);
+   
+}
+
+
+/* Стиль для иконки */
+.Icon {
+    transition: all 0.3s ease;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.titleOfBlock:hover .Icon {
+    transform: translateY(-8px);
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+}
+
+.text {
+    color: #222;
+    position: relative;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+
+.descriptionBlock {
+    padding-left: 70px; /* Совпадает с отступом линии */
+    max-width: 700px;
+}
+
+.descriptionText {
+    font-size: 22px;
+    line-height: 1.4;
+    color: black;
+    text-align: justify;
+    font-family: 'GothaProBla', sans-serif;
+}
+
+
+@media (max-width: 768px) {
+    .titleOfBlock {
+        font-size: 28px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+    
+    .titleOfBlock::after {
+        width: 50px; 
+    }
+}

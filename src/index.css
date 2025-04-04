@@ -13,6 +13,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -68,23 +69,26 @@ button:focus-visible {
   }
 }
 
+
+
 @font-face {
   font-family: 'GothaProBla'; 
-  src: url('./fonts/GothaProBla.woff') format('woff');
+  src: url('./Fonts/GothaProBla.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'GothaProLig'; 
-  src: url('./fonts/GothaProLig.woff') format('woff');
+  src: url('./Fonts/GothaProLig.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'GothaProReg'; 
-  src: url('./fonts/GothaProReg.woff') format('woff');
+  src: url('./Fonts/GothaProReg.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+
 }

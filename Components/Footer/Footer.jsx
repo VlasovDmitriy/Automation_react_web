@@ -1,5 +1,6 @@
 import React from 'react';
 import './Footer.css';
+
 import { House, Mail, NotebookText, Phone } from 'lucide-react';
 import { CircleArrowUp } from 'lucide-react';
 import Logo30year from "../../templates/logo_30_1.png";
