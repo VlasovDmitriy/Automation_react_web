@@ -1,88 +1,105 @@
-.BigLogo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; /* Занимает всю высоту экрана */
-    width: 100%; /* Занимает всю ширину экрана */
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .SliderLogo {
-    top: 0%;
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-  }
-  
-  .FactoryLogo {
-    position: absolute;
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100vh; 
-    z-index: 1;
-    filter: brightness(0.6);
-    object-fit: cover; /* Сохраняем пропорции и обрезаем лишнее */
-  }
-  
-  .Logo30years {
-    position: absolute;
-    top: 3rem;
-    left: 3rem;
-    z-index: 3;
-    
-    
-  }
-  
-  .KNG_Automation {
-    position: absolute;
-    top: 35%;
-    left: 25%;
-    transform: translate(-50%, -50%);
-    z-index: 4;
-    color: white;
-    font-size: 4.5rem;
-    text-align: left;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    font-family: 'GothaProBla', sans-serif;
-    min-height: 200px; 
-  }
-  
-  .Phone {
-    color: white;
-    position: absolute;
-    top: 4rem;
-    right: 8rem;
-    z-index: 3;
-    cursor: pointer;
-    object-fit: cover;
-    transition: transform 0.3s ease; /* Плавное увеличение */
+.fullscreen-header {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.Phone:hover {
-    transform: scale(1.2); /* Увеличение на 20% */
+.bg-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  filter: brightness(0.6);
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: 1;
 }
 
-.Mail {
-    color: white;
-    position: absolute;
-    top: 10rem;
-    right: 5rem;
-    z-index: 3;
-    cursor: pointer;
-    object-fit: cover;
-    transition: transform 0.3s ease; /* Плавное увеличение */
-
-    
+.bg-image.active {
+  opacity: 1;
 }
 
-.Mail:hover {
-    transform: scale(2); /* Увеличение на 20% */
+.overlay-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 2;
 }
 
+.anniversary-logo {
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  z-index: 3;
+  width: 150px;
+  height: auto;
+}
 
+.header-title {
+  position: absolute;
+  color: white;
+  font-size: 4.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-family: 'GothaProBla', sans-serif;
+  z-index: 3;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1s ease-out;
+}
 
+.header-title.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.title-1 {
+  top: 30%;
+  left: 15%;
+}
+
+.title-2 {
+  top: 40%;
+  left: 15%;
+}
+
+.contact-icon {
+  position: absolute;
+  color: white;
+  z-index: 3;
+  cursor: pointer;
+  opacity: 0;
+  transform: rotate(-180deg) scale(0.5);
+  transition: all 1s ease-out;
+}
+
+.contact-icon.visible {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+.phone {
+  top: 4rem;
+  right: 8rem;
+}
+
+.mail {
+  top: 10rem;
+  right: 5rem;
+}
+
+.contact-icon:hover {
+  transform: scale(1.2) !important;
+}
+
+.mail:hover {
+  transform: scale(2) !important;
+}
