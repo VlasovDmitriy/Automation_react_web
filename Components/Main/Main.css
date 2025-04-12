@@ -1,4 +1,28 @@
 /* Добавляем стиль для основного контейнера */
+
+@keyframes slideFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slideFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.texts h1, .texts h2 {
+  opacity: 0; /* Начальное состояние - невидимы */
+}
 .main-container {
   position: relative;
   width: 100%;
@@ -29,6 +53,7 @@
   font-family: 'GothaProBla', sans-serif;
   font-size: 3em;
   margin-bottom: 1rem;
+  animation: none;
 }
 
 .RV {
@@ -36,6 +61,7 @@
   font-size: 2em;
   font-family: 'GothaProBla', sans-serif;
   margin-bottom: 3rem;
+  animation: none;
 }
 
 .buttons {

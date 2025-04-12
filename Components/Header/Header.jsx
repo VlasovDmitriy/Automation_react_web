@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import sliderLogo from "../../templates/sliderbef.png";
-import factory from "../../templates/factory.jpg";
+import sliderLogo from "../../templates/sliderbef1.png";
+import programmer from "../../templates/Programist.png";
+import vistovka from "../../templates/vistovka.png";
 import Logo30years from "../../templates/logo_30.png";
 import { Phone, Mail } from 'lucide-react';
 import './Header.css';
@@ -11,16 +12,31 @@ export default function Header() {
   const phoneRef = useRef(null);
   const mailRef = useRef(null);
   const containerRef = useRef(null);
-  const [hasAnimated, setHasAnimated] = useState(false);
+  const [currentImage, setCurrentImage] = useState(0);
+
+  const images = [
+    { src: programmer, alt: "Programmer" },
+    { src: vistovka, alt: "Vistovka" },
+  ];
+
+  // Анимация смены изображений
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage(prev => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, []);
 
   const animateText = (element, delay) => {
-    element.style.transform = 'translate(calc(-50% - 80px), calc(-50% + 15px)';
+    // Сброс стилей перед началом анимации
+    element.style.transition = 'none';
+    element.style.transform = 'translate(calc(-50% - 80px), calc(-50% + 15px))';
     element.style.opacity = '0';
     
     const startTime = Date.now();
     const duration = 1500;
     const startX = 10;
-    const startY = 150;
+    const startY = 400;
     
     const animation = () => {
       const elapsed = Date.now() - startTime;
@@ -48,11 +64,13 @@ export default function Header() {
   };
 
   const animateIcon = (element, delay) => {
+    // Сброс стилей перед началом анимации
+    element.style.transition = 'none';
     element.style.opacity = '0';
     element.style.transform = 'rotate(-180deg) scale(0.5)';
     
     const startTime = Date.now();
-    const duration = 1200;
+    const duration = 1000;
     
     const animation = () => {
       const elapsed = Date.now() - startTime;
@@ -81,38 +99,84 @@ export default function Header() {
     }, delay);
   };
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !hasAnimated) {
-            animateText(line1Ref.current, 100);
-            animateText(line2Ref.current, 100);
-            animateIcon(phoneRef.current, 200);
-            animateIcon(mailRef.current, 200);
-            setHasAnimated(true);
-          }
-        });
-      },
-      {
-        threshold: 0.5,
-      }
-    );
-
-    if (containerRef.current) {
-      observer.observe(containerRef.current);
+  const resetElement = (element) => {
+    // Мгновенное скрытие без анимации
+    element.style.transition = 'none';
+    element.style.opacity = '0';
+    
+    // Для текста возвращаем начальное положение
+    if (element.classList.contains('KNG_Automation')) {
+      element.style.transform = 'translate(calc(-50% - 80px), calc(-50% + 15px))';
     }
+    
+    // Для иконок возвращаем начальное состояние
+    if (element.classList.contains('Phone') || element.classList.contains('Mail')) {
+      element.style.transform = 'rotate(-180deg) scale(0.5)';
+    }
+  };
+
+  useEffect(() => {
+    const createObserver = (ref, elementName) => {
+      return new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              // Элемент появился в viewport - запускаем анимацию
+              if (elementName.includes('line')) {
+                animateText(ref.current, elementName === 'line1' ? 100 : 300);
+              } else {
+                animateIcon(ref.current, elementName === 'phone' ? 200 : 400);
+              }
+            } else {
+              // Элемент ушел из viewport - мгновенно скрываем
+              resetElement(ref.current);
+            }
+          });
+        },
+        {
+          threshold: 0.1, // Более чувствительный порог
+          rootMargin: '0px 0px -50px 0px'
+        }
+      );
+    };
+
+    const observers = {
+      line1: createObserver(line1Ref, 'line1'),
+      line2: createObserver(line2Ref, 'line2'),
+      phone: createObserver(phoneRef, 'phone'),
+      mail: createObserver(mailRef, 'mail')
+    };
+
+    if (line1Ref.current) observers.line1.observe(line1Ref.current);
+    if (line2Ref.current) observers.line2.observe(line2Ref.current);
+    if (phoneRef.current) observers.phone.observe(phoneRef.current);
+    if (mailRef.current) observers.mail.observe(mailRef.current);
 
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
-      }
+      if (line1Ref.current) observers.line1.unobserve(line1Ref.current);
+      if (line2Ref.current) observers.line2.unobserve(line2Ref.current);
+      if (phoneRef.current) observers.phone.unobserve(phoneRef.current);
+      if (mailRef.current) observers.mail.unobserve(mailRef.current);
     };
-  }, [hasAnimated]);
+  }, []);
 
   return (
     <div className='BigLogo' ref={containerRef}>
-      <img src={factory} alt="Factory" className='FactoryLogo' />
+      {images.map((img, index) => (
+        <img
+          key={img.alt}
+          src={img.src}
+          alt={img.alt}
+          className='FactoryLogo'
+          style={{
+            position: 'absolute',
+            opacity: currentImage === index ? 1 : 0,
+            transition: 'opacity 1s ease-in-out',
+            zIndex: currentImage === index ? 1 : 0
+          }}
+        />
+      ))}
+      
       <img src={sliderLogo} alt="Sliderbef" className='SliderLogo' />
       <img src={Logo30years} alt="30 years" className='Logo30years' />
       
@@ -123,7 +187,6 @@ export default function Header() {
              left: '25%',
              transform: 'translate(-50%, -50%)',
              opacity: 0,
-             transition: 'none',
              willChange: 'transform, opacity'
            }}>
         КОСМОС-НЕФТЬ-ГАЗ
@@ -135,7 +198,6 @@ export default function Header() {
              left: '25%',
              transform: 'translate(-50%, -50%)',
              opacity: 0,
-             transition: 'none',
              willChange: 'transform, opacity'
            }}>
         АВТОМАТИЗАЦИЯ
@@ -148,8 +210,6 @@ export default function Header() {
         strokeWidth={2} 
         style={{
           opacity: 0,
-          
-          transition: 'none',
           willChange: 'transform, opacity'
         }} 
       />
@@ -160,8 +220,6 @@ export default function Header() {
         strokeWidth={2} 
         style={{
           opacity: 0,
-          
-          transition: 'none',
           willChange: 'transform, opacity'
         }} 
       />
